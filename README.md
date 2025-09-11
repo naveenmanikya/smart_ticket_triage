@@ -60,3 +60,17 @@ By default, frontend runs at http://localhost:5173
 Frontend: http://localhost:5173
 
 Backend API: http://127.0.0.1:8000/api
+
+## Assumptions & Trade-offs
+- The application uses Vue 3's Options API for all components.
+- The build process uses Vite to bundle the SPA.
+- Styling is done with plain CSS following the BEM naming convention.
+- Backend is designed using Laravel 11 and PHP version 8.2
+- Used seeder to seed database with 30 dummy records.
+- Used a queued job to handle the classification of tickets using OpenAI.
+
+## What I'd do with more time
+- Implement a more robust error handling and logging system.
+- Add middleware to the frontend with role-based access logics.
+- Improve the user interface with more interactive elements.
+- Add more unit and end-to-end tests for the front end. 
