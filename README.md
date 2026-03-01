@@ -42,6 +42,7 @@ bash
 Copy code
 php artisan serve
 By default, backend runs at http://127.0.0.1:8000
+Also run this command to get the job running : php artisan queue:work
 
 7. Setup Frontend (Vue.js)
 Open a new terminal:
