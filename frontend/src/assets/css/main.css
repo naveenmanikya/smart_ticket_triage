@@ -1,0 +1,207 @@
+/* ============================================
+   Theme Variables
+   ============================================ */
+:root {
+  --bg-color: #f4f7f9;
+  --bg-secondary-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary-color: #555555;
+  --border-color: #e0e6ed;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --modal-bg: rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] {
+  --bg-color: #282c34;
+  --bg-secondary-color: #3a4049;
+  --text-color: #f0f0f0;
+  --text-secondary-color: #a0a0a0;
+  --border-color: #555c66;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --modal-bg: rgba(0, 0, 0, 0.8);
+}
+
+/* ============================================
+   Base
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   Layout
+   ============================================ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.button {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button--primary:hover {
+  background-color: #0056b3;
+}
+
+.button--secondary {
+  background-color: #e9ecef;
+  color: #333;
+  border: 1px solid #ced4da;
+}
+
+.button--secondary:hover {
+  background-color: #d1d5db;
+}
+
+body[data-theme="dark"] .button--secondary {
+  background-color: #555c66;
+  color: #fff;
+  border-color: #6c757d;
+}
+
+body[data-theme="dark"] .button--secondary:hover {
+  background-color: #6c757d;
+}
+
+/* ============================================
+   Forms
+   ============================================ */
+.form__group {
+  margin-bottom: 1rem;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form__input,
+.form__textarea,
+.form__select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  background-color: var(--bg-secondary-color);
+  color: var(--text-color);
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ============================================
+   Badges
+   ============================================ */
+.badge {
+  padding: 0.25em 0.75em;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.badge--billing        { background-color: #007bff; }
+.badge--technical      { background-color: #dc3545; }
+.badge--general-inquiry { background-color: #28a745; }
+.badge--feature-request { background-color: #fd7e14; }
+.badge--unclassified   { background-color: #6c757d; }
+
+/* ============================================
+   Spinner
+   ============================================ */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Pagination
+   ============================================ */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.pagination-controls span {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .pagination-controls {
+    gap: 0.5rem;
+  }
+}
