@@ -1,0 +1,134 @@
+/* ============================================
+   Tickets Page
+   ============================================ */
+.tickets-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ticket-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ticket-actions__filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ticket-actions__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ticket-actions__search-input,
+.ticket-actions__category-select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--bg-secondary-color);
+  color: var(--text-color);
+}
+
+/* ============================================
+   Ticket List / Table
+   ============================================ */
+.ticket-list {
+  background-color: var(--bg-secondary-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.ticket-list__message {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary-color);
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ticket-table__header {
+  display: grid;
+  grid-template-columns: 15% 1fr 15% 15%;
+  font-weight: bold;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.ticket-table__cell {
+  padding: 1rem;
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ticket-table__cell:last-child {
+  border-right: none;
+}
+
+.ticket-table__row {
+  display: grid;
+  grid-template-columns: 15% 1fr 15% 15%;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.ticket-table__row:hover {
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+
+.ticket-table__cell--subject {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ticket-note-badge {
+  color: #007bff;
+  margin-left: 0.5rem;
+}
+
+.ticket-note-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .ticket-table__header,
+  .ticket-table__row {
+    grid-template-columns: 20% 1fr 20%;
+  }
+
+  .ticket-table__cell--confidence {
+    display: none;
+  }
+
+  .ticket-table__cell--actions {
+    padding: 0.5rem;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+  }
+
+  .ticket-actions__filters {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
